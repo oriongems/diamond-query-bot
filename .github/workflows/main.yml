@@ -1,0 +1,26 @@
+"name: bot
+on:
+  schedule:
+    - cron: ""0 */6 * * *""
+  workflow_dispatch:
+concurrency:
+  group: bot
+  cancel-in-progress: false
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 355
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ""3.12""
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: timeout 350m python bot.py || true
+        env:
+          TELEGRAM_BOT_TOKEN: 8978972604:AAEkXkaKUjMFJ5B0VXqNpsA5bWiUI73kkqM
+NVIDIA_NIM_API_KEY: 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
+NVIDIA_NIM_MODEL: nvidia/nemotron-3-super-120b-a12b
+INVENTORY_CSV_URL: https://docs.google.com/spreadsheets/d/e/2PACX-1vT4i68VjcFrUqooQ7kU9vZ_L3eFDqhkpjW9n-ZjPSsGtnZ2JDOljiRHC98LEPkX7mEa8kk_c9QDNeCW/pub?gid=123718583&single=true&output=csv
+"
