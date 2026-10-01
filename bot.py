@@ -27,7 +27,7 @@ load_dotenv()
 
 TELEGRAM_BOT_TOKEN = os.environ["TELEGRAM_BOT_TOKEN"]
 NVIDIA_NIM_API_KEY = os.environ["NVIDIA_NIM_API_KEY"]
-NVIDIA_NIM_MODEL = os.environ.get("NVIDIA_NIM_MODEL", "meta/llama-3.1-8b-instruct")
+NVIDIA_NIM_MODEL = os.environ.get("NVIDIA_NIM_MODEL", "nvidia/nemotron-3-super-120b-a12b")
 INVENTORY_CSV_URL = os.environ["INVENTORY_CSV_URL"]
 NIM_ENDPOINT = "https://integrate.api.nvidia.com/v1/chat/completions"
 # How often (seconds) the background thread re-downloads the inventory CSV.
